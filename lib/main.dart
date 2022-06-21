@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:student_management_system/screens/LoginPage.dart';
 import 'package:student_management_system/screens/loginpage2.dart';
+import 'package:student_management_system/screens/personal.dart';
 import 'package:student_management_system/screens/singuppage.dart';
 
 void main() {
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: SignUpPage(),
+      child: PersonalInfo(),
     );
   }
 }
