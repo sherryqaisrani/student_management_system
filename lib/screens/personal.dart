@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
 import 'package:student_management_system/widget/themes/colors.dart';
 
 class PersonalInfo extends StatefulWidget {
@@ -11,6 +12,7 @@ class PersonalInfo extends StatefulWidget {
 }
 
 class _PersonalInfoState extends State<PersonalInfo> {
+  final _dateEditTextController = TextEditingController();
   var gender = ['Male', 'Female', 'Other'];
   var fatherOp = ['Employee', 'Former', 'Other'];
   var domicileProvince = [
@@ -129,6 +131,20 @@ class _PersonalInfoState extends State<PersonalInfo> {
                       prefixIcon: const Icon(Icons.work),
                     ),
                     onChanged: (_) {},
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  TextFormField(
+                    controller: _dateEditTextController,
+                    readOnly: true,
+                    showCursor: false,
+                    decoration: getInputDecoration(
+                      hintText: 'Date of Birth',
+                      prefixIcon: const Icon(Icons.calendar_month),
+                      sufficIon: const Icon(Icons.calendar_today_outlined),
+                    ),
+                    onTap: _datePicker,
                   ),
                   SizedBox(
                     height: 20.h,
@@ -288,9 +304,26 @@ class _PersonalInfoState extends State<PersonalInfo> {
     );
   }
 
+// Date Picker Dialog
+
+  void _datePicker() {
+    showDatePicker(
+            context: context,
+            initialDate: DateTime.now(),
+            firstDate: DateTime(1970),
+            lastDate: DateTime.now())
+        .then((datePicker) {
+      if (datePicker != null) {
+        _dateEditTextController.text = DateFormat.yMd().format(datePicker);
+      }
+    });
+  }
+
 //TextField Decoration
   InputDecoration getInputDecoration(
-      {required String hintText, required Widget prefixIcon}) {
+      {required String hintText,
+      required Widget prefixIcon,
+      Widget? sufficIon}) {
     return InputDecoration(
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(
@@ -315,6 +348,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
       ),
       prefixIcon: prefixIcon,
       hintText: hintText,
+      suffixIcon: sufficIon,
     );
   }
 
