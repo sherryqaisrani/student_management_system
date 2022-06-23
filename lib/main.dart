@@ -6,6 +6,7 @@ import 'package:student_management_system/screens/forgot_password.dart';
 import 'package:student_management_system/screens/loginpage2.dart';
 import 'package:student_management_system/screens/personal.dart';
 import 'package:student_management_system/screens/singuppage.dart';
+import 'package:student_management_system/widget/themes/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +28,32 @@ class MyApp extends StatelessWidget {
           title: "Student Management System",
           theme: ThemeData(
             primarySwatch: Colors.blue,
-            textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
+            inputDecorationTheme: InputDecorationTheme(
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(
+                  10.r,
+                ),
+                borderSide: const BorderSide(
+                  color: Colors.transparent,
+                ),
+              ),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(
+                  10.r,
+                ),
+                borderSide: const BorderSide(
+                  color: Colors.transparent,
+                ),
+              ),
+              filled: true,
+              fillColor: ThemeColor.grayColor,
+              contentPadding: EdgeInsets.symmetric(
+                vertical: 15.h,
+              ),
+            ),
+            textTheme: Typography.englishLike2018.apply(
+              fontSizeFactor: 1.sp,
+            ),
           ),
           home: child,
         );
