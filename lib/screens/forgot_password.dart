@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '../widget/themes/colors.dart';
+import 'package:student_management_system/utils/colors.dart';
 
 class ForgotPassword extends StatefulWidget {
   ForgotPassword({Key? key}) : super(key: key);
@@ -44,7 +43,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   style: TextStyle(
                     fontSize: 32.sp,
                     fontWeight: FontWeight.w700,
-                    color: ThemeColor.loginCode,
+                    color: AppColors.primaryColor,
                   ),
                 ),
                 SizedBox(
@@ -65,7 +64,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        primary: ThemeColor.loginCode,
+                        primary: AppColors.primaryColor,
                         padding: EdgeInsets.symmetric(
                           vertical: 16.h,
                         ),
@@ -116,7 +115,7 @@ InputDecoration getInputDecoration({required String hintText}) {
       ),
     ),
     filled: true,
-    fillColor: ThemeColor.grayColor,
+    fillColor: AppColors.aLightPlaceHolderColor,
     hintText: hintText,
     prefixIcon: const Icon(
       Icons.phone,

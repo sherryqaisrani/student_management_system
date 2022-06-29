@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:student_management_system/widget/themes/colors.dart';
+import 'package:student_management_system/utils/colors.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
         fontWeight: FontWeight.w500,
       ),
       filled: true,
-      fillColor: ThemeColor.grayColor,
+      fillColor: AppColors.aLightPlaceHolderColor,
     );
   }
 
@@ -102,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: double.infinity,
                 child: TextButton(
                   style: TextButton.styleFrom(
-                    backgroundColor: ThemeColor.oragneColor,
+                    backgroundColor: AppColors.oragneColor,
                     shape: RoundedRectangleBorder(
                       side: const BorderSide(
                         color: Colors.transparent,
@@ -119,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     "Sign in",
                     style: TextStyle(
-                      color: ThemeColor.btnBlackColor,
+                      color: AppColors.btnBlackColor,
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
                     ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:student_management_system/widget/themes/colors.dart';
+import 'package:student_management_system/utils/colors.dart';
 
 class LoginPage2 extends StatefulWidget {
   LoginPage2({Key? key}) : super(key: key);
@@ -41,7 +41,7 @@ class _LoginPage2State extends State<LoginPage2> {
         fontWeight: FontWeight.w400,
       ),
       filled: true,
-      fillColor: ThemeColor.lightGrayColor,
+      fillColor: AppColors.lightGrayColor,
       prefixIcon: prefixIcon,
       suffixIcon: suffixIcon,
     );
@@ -80,7 +80,7 @@ class _LoginPage2State extends State<LoginPage2> {
                   Text(
                     'LOGIN',
                     style: TextStyle(
-                      color: ThemeColor.loginCode,
+                      color: AppColors.primaryColor,
                       fontSize: 32.sp,
                       fontWeight: FontWeight.w700,
                     ),
@@ -116,7 +116,7 @@ class _LoginPage2State extends State<LoginPage2> {
                     child: Text(
                       'Forgot password?',
                       style: TextStyle(
-                        color: ThemeColor.loginCode,
+                        color: AppColors.primaryColor,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w800,
                       ),
@@ -141,7 +141,7 @@ class _LoginPage2State extends State<LoginPage2> {
                           padding: EdgeInsets.symmetric(
                             vertical: 18.h,
                           ),
-                          backgroundColor: ThemeColor.loginCode,
+                          backgroundColor: AppColors.primaryColor,
                         ),
                         onPressed: () {},
                         child: Text(
@@ -174,7 +174,7 @@ class _LoginPage2State extends State<LoginPage2> {
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w800,
-                          color: ThemeColor.loginCode,
+                          color: AppColors.primaryColor,
                         ),
                       ),
                     ],

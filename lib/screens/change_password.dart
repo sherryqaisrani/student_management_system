@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:student_management_system/widget/themes/colors.dart';
+import 'package:student_management_system/utils/colors.dart';
 
 class ChangePassword extends StatefulWidget {
   ChangePassword({Key? key}) : super(key: key);
@@ -44,7 +44,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                     style: TextStyle(
                       fontSize: 32.sp,
                       fontWeight: FontWeight.w700,
-                      color: ThemeColor.loginCode,
+                      color: AppColors.primaryColor,
                     ),
                   ),
                   SizedBox(
@@ -87,7 +87,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                     width: double.infinity,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          primary: ThemeColor.loginCode,
+                          primary: AppColors.primaryColor,
                           padding: EdgeInsets.symmetric(
                             vertical: 16.h,
                           ),
@@ -137,7 +137,7 @@ class _ChangePasswordState extends State<ChangePassword> {
         ),
       ),
       filled: true,
-      fillColor: ThemeColor.grayColor,
+      fillColor: AppColors.aLightPlaceHolderColor,
       hintText: hintText,
       prefixIcon: const Icon(
         Icons.lock,

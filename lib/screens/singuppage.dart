@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:student_management_system/widget/themes/colors.dart';
+import 'package:student_management_system/utils/colors.dart';
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key? key}) : super(key: key);
@@ -45,7 +45,7 @@ class _SignUpPageState extends State<SignUpPage> {
       suffixIcon: suffixIcon,
       hintText: hintText,
       filled: true,
-      fillColor: ThemeColor.lightGrayColor,
+      fillColor: AppColors.lightGrayColor,
     );
   }
 
@@ -89,7 +89,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     style: TextStyle(
                       fontSize: 32.sp,
                       fontWeight: FontWeight.w700,
-                      color: ThemeColor.loginCode,
+                      color: AppColors.primaryColor,
                     ),
                   ),
                   SizedBox(
@@ -190,7 +190,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       height: 55.h,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: ThemeColor.loginCode,
+                          primary: AppColors.primaryColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(
                               10.sp,
@@ -229,7 +229,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w800,
-                          color: ThemeColor.loginCode,
+                          color: AppColors.primaryColor,
                         ),
                       ),
                     ],

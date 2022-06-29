@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
-import 'package:student_management_system/widget/themes/colors.dart';
+import 'package:student_management_system/utils/colors.dart';
 
 class PersonalInfo extends StatefulWidget {
   PersonalInfo({Key? key}) : super(key: key);
@@ -57,7 +57,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                       style: TextStyle(
                         fontSize: 32.sp,
                         fontWeight: FontWeight.w700,
-                        color: ThemeColor.loginCode,
+                        color: AppColors.primaryColor,
                       ),
                     ),
                     SizedBox(height: 22.h),
@@ -283,7 +283,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                       width: double.infinity,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: ThemeColor.loginCode,
+                            primary: AppColors.primaryColor,
                             padding: EdgeInsets.symmetric(
                               vertical: 17.h,
                             ),
@@ -357,7 +357,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
         ),
       ),
       filled: true,
-      fillColor: ThemeColor.grayColor,
+      fillColor: AppColors.aLightPlaceHolderColor,
       contentPadding: EdgeInsets.symmetric(
         vertical: 15.h,
       ),
