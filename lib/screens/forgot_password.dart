@@ -43,7 +43,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   style: TextStyle(
                     fontSize: 32.sp,
                     fontWeight: FontWeight.w700,
-                    color: AppColors.primaryColor,
                   ),
                 ),
                 SizedBox(
@@ -64,7 +63,6 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                        primary: AppColors.primaryColor,
                         padding: EdgeInsets.symmetric(
                           vertical: 16.h,
                         ),
@@ -115,7 +113,7 @@ InputDecoration getInputDecoration({required String hintText}) {
       ),
     ),
     filled: true,
-    fillColor: AppColors.aLightPlaceHolderColor,
+    fillColor: aLightPlaceholderColor,
     hintText: hintText,
     prefixIcon: const Icon(
       Icons.phone,

@@ -57,7 +57,6 @@ class _PersonalInfoState extends State<PersonalInfo> {
                       style: TextStyle(
                         fontSize: 32.sp,
                         fontWeight: FontWeight.w700,
-                        color: AppColors.primaryColor,
                       ),
                     ),
                     SizedBox(height: 22.h),
@@ -283,7 +282,6 @@ class _PersonalInfoState extends State<PersonalInfo> {
                       width: double.infinity,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: AppColors.primaryColor,
                             padding: EdgeInsets.symmetric(
                               vertical: 17.h,
                             ),
@@ -357,7 +355,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
         ),
       ),
       filled: true,
-      fillColor: AppColors.aLightPlaceHolderColor,
+      fillColor: aLightPlaceholderColor,
       contentPadding: EdgeInsets.symmetric(
         vertical: 15.h,
       ),

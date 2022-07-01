@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:student_management_system/error/remote_exception.dart';
 import 'package:student_management_system/screens/loginpage2.dart';

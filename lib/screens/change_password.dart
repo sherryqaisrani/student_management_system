@@ -44,7 +44,6 @@ class _ChangePasswordState extends State<ChangePassword> {
                     style: TextStyle(
                       fontSize: 32.sp,
                       fontWeight: FontWeight.w700,
-                      color: AppColors.primaryColor,
                     ),
                   ),
                   SizedBox(
@@ -87,7 +86,6 @@ class _ChangePasswordState extends State<ChangePassword> {
                     width: double.infinity,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                          primary: AppColors.primaryColor,
                           padding: EdgeInsets.symmetric(
                             vertical: 16.h,
                           ),
@@ -137,7 +135,7 @@ class _ChangePasswordState extends State<ChangePassword> {
         ),
       ),
       filled: true,
-      fillColor: AppColors.aLightPlaceHolderColor,
+      fillColor: aLightPlaceholderColor,
       hintText: hintText,
       prefixIcon: const Icon(
         Icons.lock,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:student_management_system/screens/loginpage2.dart';
 import 'package:student_management_system/screens/personal.dart';
 import 'package:student_management_system/utils/colors.dart';
+import 'package:student_management_system/utils/themes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,39 +23,13 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
           title: "Student Management System",
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-            inputDecorationTheme: InputDecorationTheme(
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(
-                  10.r,
-                ),
-                borderSide: const BorderSide(
-                  color: Colors.transparent,
-                ),
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(
-                  10.r,
-                ),
-                borderSide: const BorderSide(
-                  color: Colors.transparent,
-                ),
-              ),
-              filled: true,
-              fillColor: AppColors.aLightPlaceHolderColor,
-              contentPadding: EdgeInsets.symmetric(
-                vertical: 15.h,
-              ),
-            ),
-            textTheme: Typography.englishLike2018.apply(
-              fontSizeFactor: 1.sp,
-            ),
-          ),
+          themeMode: ThemeMode.system,
+          darkTheme: dartkTheme,
+          theme: lightTheme,
           home: child,
         );
       },
-      child: PersonalInfo(),
+      child: LoginPage2(),
     );
   }
 }

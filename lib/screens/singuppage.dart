@@ -45,7 +45,7 @@ class _SignUpPageState extends State<SignUpPage> {
       suffixIcon: suffixIcon,
       hintText: hintText,
       filled: true,
-      fillColor: AppColors.lightGrayColor,
+      fillColor: aLightPlaceholderColor,
     );
   }
 
@@ -89,7 +89,6 @@ class _SignUpPageState extends State<SignUpPage> {
                     style: TextStyle(
                       fontSize: 32.sp,
                       fontWeight: FontWeight.w700,
-                      color: AppColors.primaryColor,
                     ),
                   ),
                   SizedBox(
@@ -190,7 +189,6 @@ class _SignUpPageState extends State<SignUpPage> {
                       height: 55.h,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: AppColors.primaryColor,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(
                               10.sp,
@@ -229,7 +227,6 @@ class _SignUpPageState extends State<SignUpPage> {
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w800,
-                          color: AppColors.primaryColor,
                         ),
                       ),
                     ],

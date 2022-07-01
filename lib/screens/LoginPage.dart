@@ -48,7 +48,7 @@ class _LoginPageState extends State<LoginPage> {
         fontWeight: FontWeight.w500,
       ),
       filled: true,
-      fillColor: AppColors.aLightPlaceHolderColor,
+      fillColor: aLightPlaceholderColor,
     );
   }
 
@@ -102,7 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: double.infinity,
                 child: TextButton(
                   style: TextButton.styleFrom(
-                    backgroundColor: AppColors.oragneColor,
+                    backgroundColor: oragneColor,
                     shape: RoundedRectangleBorder(
                       side: const BorderSide(
                         color: Colors.transparent,
@@ -119,7 +119,6 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text(
                     "Sign in",
                     style: TextStyle(
-                      color: AppColors.btnBlackColor,
                       fontSize: 16.sp,
                       fontWeight: FontWeight.w500,
                     ),
