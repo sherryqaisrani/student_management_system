@@ -50,19 +50,25 @@ class _LoginPage2State extends State<LoginPage2> {
                     style: Theme.of(context).textTheme.headline3,
                   ),
                   aPageSpecing1,
-                  CustomeFormTextField(
+                  TextFormField(
                     controller: _userNameController,
-                    textHint: '3302-17248621-2',
-                    prefixIcon: const Icon(
-                      Icons.fingerprint,
+                    textInputAction: TextInputAction.next,
+                    keyboardType: TextInputType.number,
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.fingerprint),
+                      hintText: '13302-1728416212-1',
                     ),
                   ),
                   aPageSpecing1,
-                  CustomeFormTextField(
+                  TextFormField(
                     controller: _passwordTextController,
-                    textHint: '*************',
-                    prefixIcon: const Icon(Icons.lock),
-                    suffixIcon: const Icon(Icons.remove_red_eye),
+                    textInputAction: TextInputAction.next,
+                    keyboardType: TextInputType.text,
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.lock),
+                      suffixIcon: Icon(Icons.remove_red_eye),
+                      hintText: 'Password',
+                    ),
                   ),
                   SizedBox(
                     height: 15.h,

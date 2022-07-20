@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:student_management_system/utils/colors.dart';
+import 'package:student_management_system/utils/file_path.dart';
+import 'package:student_management_system/widget/CustomeFormTextField.dart';
 
 class SignUpPage extends StatefulWidget {
   SignUpPage({Key? key}) : super(key: key);
@@ -11,45 +13,14 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
-  InputDecoration getInputDecoration({
-    required String hintText,
-    Widget? prefixIcon,
-    Widget? suffixIcon,
-  }) {
-    return InputDecoration(
-      border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(
-            10.r,
-          ),
-          borderSide: const BorderSide(color: Colors.transparent)),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(
-          10.r,
-        ),
-        borderSide: const BorderSide(
-          color: Colors.transparent,
-        ),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(
-          10.r,
-        ),
-        borderSide: const BorderSide(
-          color: Colors.transparent,
-        ),
-      ),
-      contentPadding: const EdgeInsets.symmetric(
-        vertical: 16,
-      ),
-      prefixIcon: prefixIcon,
-      suffixIcon: suffixIcon,
-      hintText: hintText,
-      filled: true,
-      fillColor: aLightPlaceholderColor,
-    );
-  }
+  final TextEditingController _idCardController = TextEditingController();
+  final TextEditingController _fullNameController = TextEditingController();
+  final TextEditingController _shortNameController = TextEditingController();
+  final TextEditingController _phoneNumberController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
-  var Items = ['A', 'B', 'C'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,14 +35,14 @@ class _SignUpPageState extends State<SignUpPage> {
                     top: 0,
                     left: 0,
                     child: SvgPicture.asset(
-                      'assets/svg/left_header.svg',
+                      FilePath.leftHeader,
                     ),
                   ),
                   Positioned(
                     top: 0,
                     right: 0,
                     child: SvgPicture.asset(
-                      'assets/svg/header.svg',
+                      FilePath.appLogo,
                     ),
                   ),
                 ],
@@ -86,95 +57,80 @@ class _SignUpPageState extends State<SignUpPage> {
                 children: [
                   Text(
                     'SIGNUP',
-                    style: TextStyle(
-                      fontSize: 32.sp,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style: Theme.of(context).textTheme.headline3,
                   ),
                   SizedBox(
                     height: 17.h,
                   ),
                   TextFormField(
+                    controller: _idCardController,
+                    textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.number,
-                    textInputAction: TextInputAction.next,
-                    decoration: getInputDecoration(
-                      prefixIcon: const Icon(
-                        Icons.fingerprint,
-                      ),
-                      hintText: '13302-87467233-9',
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.fingerprint),
+                      hintText: '13302-1728416212-1',
                     ),
                   ),
                   SizedBox(
                     height: 17.h,
                   ),
                   TextFormField(
-                    keyboardType: TextInputType.text,
                     textInputAction: TextInputAction.next,
-                    decoration: getInputDecoration(
+                    keyboardType: TextInputType.text,
+                    controller: _fullNameController,
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.person),
                       hintText: 'Full Name',
-                      prefixIcon: const Icon(
-                        Icons.person,
-                      ),
                     ),
                   ),
                   SizedBox(
                     height: 17.h,
                   ),
                   TextFormField(
-                    keyboardType: TextInputType.text,
                     textInputAction: TextInputAction.next,
-                    decoration: getInputDecoration(
+                    keyboardType: TextInputType.text,
+                    controller: _shortNameController,
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.person),
                       hintText: 'short Name',
-                      prefixIcon: const Icon(
-                        Icons.person,
-                      ),
                     ),
                   ),
                   SizedBox(
                     height: 17.h,
                   ),
                   TextFormField(
+                    textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.number,
-                    textInputAction: TextInputAction.next,
-                    decoration: getInputDecoration(
-                      hintText: 'Phone number',
-                      prefixIcon: const Icon(
-                        Icons.person,
-                      ),
+                    controller: _phoneNumberController,
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.person),
+                      hintText: 'Phone Number',
                     ),
                   ),
                   SizedBox(
                     height: 17.h,
                   ),
                   TextFormField(
-                    keyboardType: TextInputType.text,
+                    controller: _passwordController,
                     textInputAction: TextInputAction.next,
-                    obscureText: true,
-                    decoration: getInputDecoration(
+                    keyboardType: TextInputType.text,
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.lock),
+                      suffixIcon: Icon(Icons.remove_red_eye),
                       hintText: 'Password',
-                      prefixIcon: const Icon(
-                        Icons.lock,
-                      ),
-                      suffixIcon: const Icon(
-                        Icons.remove_red_eye,
-                      ),
                     ),
                   ),
                   SizedBox(
                     height: 17.h,
                   ),
                   TextFormField(
-                    keyboardType: TextInputType.text,
+                    controller: _confirmPasswordController,
                     textInputAction: TextInputAction.next,
-                    obscureText: true,
-                    decoration: getInputDecoration(
+                    keyboardType: TextInputType.text,
+                    decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.lock),
+                      suffixIcon: Icon(Icons.remove_red_eye),
                       hintText: 'Confirm Password',
-                      prefixIcon: const Icon(
-                        Icons.lock,
-                      ),
-                      suffixIcon: const Icon(
-                        Icons.remove_red_eye,
-                      ),
                     ),
                   ),
                   SizedBox(
@@ -217,17 +173,14 @@ class _SignUpPageState extends State<SignUpPage> {
                     children: [
                       Text(
                         'Already have an account?',
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w400,
-                        ),
+                        style: Theme.of(context).textTheme.headline6,
                       ),
                       Text(
                         'Sign In',
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w800,
-                        ),
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline6!
+                            .copyWith(color: Theme.of(context).primaryColor),
                       ),
                     ],
                   ),

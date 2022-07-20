@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: LoginPage2(),
+      child: SignUpPage(),
     );
   }
 }
