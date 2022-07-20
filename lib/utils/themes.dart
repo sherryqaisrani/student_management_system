@@ -102,6 +102,14 @@ final dartkTheme = ThemeData.dark().copyWith(
           color: aDarkPrimaryColor,
         )),
   ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+    primary: aDarkPrimaryColor,
+    padding: aElevetedButtonPadding,
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w600,
+    ),
+  )),
   inputDecorationTheme: InputDecorationTheme(
     contentPadding: EdgeInsets.symmetric(
       vertical: 16.h,

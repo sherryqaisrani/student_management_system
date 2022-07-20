@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
 import 'package:student_management_system/utils/colors.dart';
+import 'package:student_management_system/utils/file_path.dart';
 
 class PersonalInfo extends StatefulWidget {
   PersonalInfo({Key? key}) : super(key: key);
@@ -37,7 +38,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
                   top: 0,
                   right: 0,
                   child: SvgPicture.asset(
-                    'assets/svg/header.svg',
+                    FilePath.appLogo,
                   ),
                 ),
               ],
@@ -54,18 +55,15 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     SizedBox(height: 130.h),
                     Text(
                       'Personal Information',
-                      style: TextStyle(
-                        fontSize: 32.sp,
-                        fontWeight: FontWeight.w700,
-                      ),
+                      style: Theme.of(context).textTheme.headline3,
                     ),
                     SizedBox(height: 22.h),
                     TextFormField(
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.text,
-                      decoration: getInputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Name',
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           Icons.person,
                         ),
                       ),
@@ -76,9 +74,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     TextFormField(
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.text,
-                      decoration: getInputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'short Name',
-                        prefixIcon: const Icon(Icons.person),
+                        prefixIcon: Icon(Icons.person),
                       ),
                     ),
                     SizedBox(
@@ -87,9 +85,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     TextFormField(
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.number,
-                      decoration: getInputDecoration(
+                      decoration: const InputDecoration(
                         hintText: '13302-1728416212-1',
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           Icons.fingerprint,
                         ),
                       ),
@@ -106,9 +104,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                           );
                         },
                       ).toList(),
-                      decoration: getInputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Gender',
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           Icons.person,
                         ),
                       ),
@@ -120,9 +118,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     TextFormField(
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.text,
-                      decoration: getInputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Father Name',
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           Icons.person,
                         ),
                       ),
@@ -139,9 +137,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                           );
                         },
                       ).toList(),
-                      decoration: getInputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Father’s  Occupation',
-                        prefixIcon: const Icon(Icons.work),
+                        prefixIcon: Icon(Icons.work),
                       ),
                       onChanged: (_) {},
                     ),
@@ -152,10 +150,10 @@ class _PersonalInfoState extends State<PersonalInfo> {
                       controller: _dateEditTextController,
                       readOnly: true,
                       showCursor: false,
-                      decoration: getInputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Date of Birth',
-                        prefixIcon: const Icon(Icons.calendar_month),
-                        sufficIon: const Icon(Icons.calendar_today_outlined),
+                        prefixIcon: Icon(Icons.calendar_month),
+                        suffixIcon: Icon(Icons.calendar_today_outlined),
                       ),
                       onTap: _datePicker,
                     ),
@@ -165,9 +163,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     TextFormField(
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.emailAddress,
-                      decoration: getInputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Email',
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           Icons.email,
                         ),
                       ),
@@ -178,9 +176,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     TextFormField(
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.number,
-                      decoration: getInputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Contact No.',
-                        prefixIcon: const Icon(Icons.phone),
+                        prefixIcon: Icon(Icons.phone),
                       ),
                     ),
                     SizedBox(
@@ -189,9 +187,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     TextFormField(
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.number,
-                      decoration: getInputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Other Contact No.',
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           Icons.phone,
                         ),
                       ),
@@ -202,9 +200,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     TextFormField(
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.number,
-                      decoration: getInputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Guardian Contact No.',
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           Icons.phone,
                         ),
                       ),
@@ -215,9 +213,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     TextFormField(
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.text,
-                      decoration: getInputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Postal Address',
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           Icons.location_city,
                         ),
                       ),
@@ -228,9 +226,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     TextFormField(
                       textInputAction: TextInputAction.next,
                       keyboardType: TextInputType.text,
-                      decoration: getInputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Permanent Address',
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           Icons.location_city,
                         ),
                       ),
@@ -247,9 +245,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                             ),
                           )
                           .toList(),
-                      decoration: getInputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Domicile Province',
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           Icons.location_city,
                         ),
                       ),
@@ -268,9 +266,9 @@ class _PersonalInfoState extends State<PersonalInfo> {
                           )
                           .toList(),
                       onChanged: (_) {},
-                      decoration: getInputDecoration(
+                      decoration: const InputDecoration(
                         hintText: 'Disability',
-                        prefixIcon: const Icon(
+                        prefixIcon: Icon(
                           Icons.wheelchair_pickup,
                         ),
                       ),
@@ -281,26 +279,10 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            padding: EdgeInsets.symmetric(
-                              vertical: 17.h,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(
-                                10.r,
-                              ),
-                              side: const BorderSide(
-                                color: Colors.transparent,
-                              ),
-                            )),
                         onPressed: () {},
                         child: Text(
                           'Save',
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
-                          ),
+                          style: Theme.of(context).textTheme.button,
                         ),
                       ),
                     ),
@@ -331,38 +313,4 @@ class _PersonalInfoState extends State<PersonalInfo> {
       }
     });
   }
-
-//TextField Decoration
-  InputDecoration getInputDecoration(
-      {required String hintText,
-      required Widget prefixIcon,
-      Widget? sufficIon}) {
-    return InputDecoration(
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(
-          10.r,
-        ),
-        borderSide: const BorderSide(
-          color: Colors.transparent,
-        ),
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(
-          10.r,
-        ),
-        borderSide: const BorderSide(
-          color: Colors.transparent,
-        ),
-      ),
-      filled: true,
-      fillColor: aLightPlaceholderColor,
-      contentPadding: EdgeInsets.symmetric(
-        vertical: 15.h,
-      ),
-      prefixIcon: prefixIcon,
-      hintText: hintText,
-      suffixIcon: sufficIon,
-    );
-  }
 }
-//Logos on the top left and right

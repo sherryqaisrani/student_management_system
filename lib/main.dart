@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:student_management_system/screens/loginpage2.dart';
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: SignUpPage(),
+      child: PersonalInfo(),
     );
   }
 }

@@ -142,25 +142,11 @@ class _SignUpPageState extends State<SignUpPage> {
                   Center(
                     child: SizedBox(
                       width: double.infinity,
-                      height: 55.h,
                       child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(
-                              10.sp,
-                            ),
-                            side: const BorderSide(
-                              color: Colors.transparent,
-                            ),
-                          ),
-                        ),
                         onPressed: () {},
                         child: Text(
                           'SIGNUP',
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w600,
-                          ),
+                          style: Theme.of(context).textTheme.button,
                         ),
                       ),
                     ),
