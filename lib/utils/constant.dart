@@ -13,3 +13,14 @@ EdgeInsets aInputFieldPadding = EdgeInsets.symmetric(
   vertical: 16.h,
   horizontal: 16.w,
 );
+
+EdgeInsets aElevetedButtonPadding = EdgeInsets.symmetric(
+  vertical: 18.h,
+);
+
+final aPageSpecing1 = SizedBox(
+  height: 20.h,
+);
+final aPageSpecing2 = SizedBox(
+  height: 40.h,
+);

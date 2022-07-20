@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:student_management_system/utils/colors.dart';
+import 'package:student_management_system/utils/constant.dart';
 import 'package:student_management_system/widget/CustomeFormTextField.dart';
 
 class LoginPage2 extends StatefulWidget {
@@ -47,14 +47,9 @@ class _LoginPage2State extends State<LoginPage2> {
                 children: [
                   Text(
                     'LOGIN',
-                    style: TextStyle(
-                      fontSize: 32.sp,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style: Theme.of(context).textTheme.headline3,
                   ),
-                  SizedBox(
-                    height: 17.h,
-                  ),
+                  aPageSpecing1,
                   CustomeFormTextField(
                     controller: _userNameController,
                     textHint: '3302-17248621-2',
@@ -62,9 +57,7 @@ class _LoginPage2State extends State<LoginPage2> {
                       Icons.fingerprint,
                     ),
                   ),
-                  SizedBox(
-                    height: 17.h,
-                  ),
+                  aPageSpecing1,
                   CustomeFormTextField(
                     controller: _passwordTextController,
                     textHint: '*************',
@@ -78,10 +71,9 @@ class _LoginPage2State extends State<LoginPage2> {
                     alignment: Alignment.topRight,
                     child: Text(
                       'Forgot password?',
-                      style: TextStyle(
-                        fontSize: 14.sp,
-                        fontWeight: FontWeight.w800,
-                      ),
+                      style: Theme.of(context).textTheme.headline6!.copyWith(
+                            color: Theme.of(context).primaryColor,
+                          ),
                     ),
                   ),
                   SizedBox(
@@ -90,29 +82,11 @@ class _LoginPage2State extends State<LoginPage2> {
                   Center(
                     child: SizedBox(
                       width: double.infinity,
-                      child: TextButton(
-                        style: TextButton.styleFrom(
-                          backgroundColor: Theme.of(context).backgroundColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(
-                              10.r,
-                            ),
-                            side: const BorderSide(
-                              color: Colors.transparent,
-                            ),
-                          ),
-                          padding: EdgeInsets.symmetric(
-                            vertical: 18.h,
-                          ),
-                        ),
+                      child: ElevatedButton(
                         onPressed: () {},
                         child: Text(
                           'LOGIN',
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
-                          ),
+                          style: Theme.of(context).textTheme.button,
                         ),
                       ),
                     ),
@@ -125,17 +99,14 @@ class _LoginPage2State extends State<LoginPage2> {
                     children: [
                       Text(
                         'Don\'t have an account?',
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w300,
-                        ),
+                        style: Theme.of(context).textTheme.headline6,
                       ),
                       Text(
                         'Sign Up',
-                        style: TextStyle(
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w800,
-                        ),
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline6!
+                            .copyWith(color: Theme.of(context).primaryColor),
                       ),
                     ],
                   )

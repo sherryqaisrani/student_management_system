@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:student_management_system/utils/colors.dart';
+import 'package:student_management_system/utils/constant.dart';
 
 final lightTheme = ThemeData.light().copyWith(
   primaryColor: aLightPrimaryColor,
@@ -31,6 +32,13 @@ final lightTheme = ThemeData.light().copyWith(
           color: aLightPrimaryColor,
         )),
   ),
+  elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+    padding: aElevetedButtonPadding,
+    textStyle: const TextStyle(
+      fontWeight: FontWeight.w600,
+    ),
+  )),
   inputDecorationTheme: InputDecorationTheme(
     contentPadding: EdgeInsets.symmetric(
       vertical: 16.h,
@@ -58,6 +66,12 @@ final lightTheme = ThemeData.light().copyWith(
     filled: true,
     fillColor: aLightPlaceholderColor,
   ),
+  colorScheme: const ColorScheme.light(
+    background: aLightPlaceholderColor,
+    surface: aLightPlaceholderTextColor,
+    primary: aLightPrimaryColor,
+    secondary: aLightAccentColor,
+  ),
 );
 
 final dartkTheme = ThemeData.dark().copyWith(
@@ -77,7 +91,7 @@ final dartkTheme = ThemeData.dark().copyWith(
           color: aDarkTextColor,
         ),
         bodyText1: TextStyle(
-          fontSize: 17.sp,
+          fontSize: 14.sp,
           fontWeight: FontWeight.bold,
         ),
         button: TextStyle(
@@ -114,5 +128,11 @@ final dartkTheme = ThemeData.dark().copyWith(
     ),
     filled: true,
     fillColor: aDarkPlaceholderColor,
+  ),
+  colorScheme: const ColorScheme.dark(
+    background: aDarkPlaceholderColor,
+    surface: aDarkPlaceholderTextColor,
+    primary: aDarkPrimaryColor,
+    secondary: aDarkAccentColor,
   ),
 );
