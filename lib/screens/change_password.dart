@@ -41,10 +41,9 @@ class _ChangePasswordState extends State<ChangePassword> {
                 children: [
                   Text(
                     'Reset Password',
-                    style: TextStyle(
-                      fontSize: 32.sp,
-                      fontWeight: FontWeight.w700,
-                    ),
+                    style: Theme.of(context).textTheme.headline3!.copyWith(
+                          color: Theme.of(context).primaryColor,
+                        ),
                   ),
                   SizedBox(
                     height: 23.h,
@@ -53,8 +52,12 @@ class _ChangePasswordState extends State<ChangePassword> {
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.text,
                     obscureText: true,
-                    decoration: getInputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'Old Password',
+                      prefixIcon: Icon(
+                        Icons.lock,
+                      ),
+                      suffixIcon: Icon(Icons.remove_red_eye),
                     ),
                   ),
                   SizedBox(
@@ -64,8 +67,12 @@ class _ChangePasswordState extends State<ChangePassword> {
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.text,
                     obscureText: true,
-                    decoration: getInputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'New Password',
+                      prefixIcon: Icon(
+                        Icons.lock,
+                      ),
+                      suffixIcon: Icon(Icons.remove_red_eye),
                     ),
                   ),
                   SizedBox(
@@ -75,8 +82,12 @@ class _ChangePasswordState extends State<ChangePassword> {
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.text,
                     obscureText: true,
-                    decoration: getInputDecoration(
+                    decoration: const InputDecoration(
                       hintText: 'Confirm New Password',
+                      prefixIcon: Icon(
+                        Icons.lock,
+                      ),
+                      suffixIcon: Icon(Icons.remove_red_eye),
                     ),
                   ),
                   SizedBox(
@@ -85,26 +96,9 @@ class _ChangePasswordState extends State<ChangePassword> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(
-                            vertical: 16.h,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(
-                              10.r,
-                            ),
-                            side: const BorderSide(
-                              color: Colors.transparent,
-                            ),
-                          )),
                       onPressed: () {},
-                      child: Text(
-                        'CHANGE PASSWORD',
-                        style: TextStyle(
-                            fontSize: 16.sp,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white),
-                      ),
+                      child: Text('CHANGE PASSWORD',
+                          style: Theme.of(context).textTheme.button),
                     ),
                   ),
                 ],
@@ -112,36 +106,6 @@ class _ChangePasswordState extends State<ChangePassword> {
             )
           ],
         ),
-      ),
-    );
-  }
-
-  InputDecoration getInputDecoration({required String hintText}) {
-    return InputDecoration(
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(
-          10.r,
-        ),
-        borderSide: const BorderSide(
-          color: Colors.transparent,
-        ),
-      ),
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(
-          10.r,
-        ),
-        borderSide: const BorderSide(
-          color: Colors.transparent,
-        ),
-      ),
-      filled: true,
-      fillColor: aLightPlaceholderColor,
-      hintText: hintText,
-      prefixIcon: const Icon(
-        Icons.lock,
-      ),
-      suffixIcon: const Icon(
-        Icons.remove_red_eye,
       ),
     );
   }
