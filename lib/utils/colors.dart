@@ -21,3 +21,4 @@ const Color aDarkBackgroundColor = Color(0xFF2D3251);
 const Color aDarkErrorColor = Color(0xFFD0524A);
 
 const Color oragneColor = Color(0xffFCC50A);
+const Color aGrayColor = Color(0xFF8D989D);

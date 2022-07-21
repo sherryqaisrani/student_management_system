@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:student_management_system/screens/change_password.dart';
 import 'package:student_management_system/screens/forgot_password.dart';
 import 'package:student_management_system/screens/loginpage2.dart';
+import 'package:student_management_system/screens/otp.dart';
 import 'package:student_management_system/screens/personal.dart';
 import 'package:student_management_system/screens/edit_qualification.dart';
 import 'package:student_management_system/screens/qualification.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: ForgotPassword(),
+      child: OtpPage(),
     );
   }
 }
