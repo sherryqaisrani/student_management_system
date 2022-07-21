@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:student_management_system/utils/colors.dart';
+import 'package:student_management_system/utils/constant.dart';
 
 class ChangePassword extends StatefulWidget {
   ChangePassword({Key? key}) : super(key: key);
@@ -45,9 +46,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                           color: Theme.of(context).primaryColor,
                         ),
                   ),
-                  SizedBox(
-                    height: 23.h,
-                  ),
+                  aPageSpecing1,
                   TextFormField(
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.text,
@@ -60,9 +59,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                       suffixIcon: Icon(Icons.remove_red_eye),
                     ),
                   ),
-                  SizedBox(
-                    height: 20.h,
-                  ),
+                  aPageSpecing1,
                   TextFormField(
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.text,
@@ -75,9 +72,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                       suffixIcon: Icon(Icons.remove_red_eye),
                     ),
                   ),
-                  SizedBox(
-                    height: 20.h,
-                  ),
+                  aPageSpecing1,
                   TextFormField(
                     textInputAction: TextInputAction.next,
                     keyboardType: TextInputType.text,

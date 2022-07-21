@@ -24,6 +24,10 @@ final lightTheme = ThemeData.light().copyWith(
           fontSize: 17.sp,
           fontWeight: FontWeight.bold,
         ),
+        bodyText2: TextStyle(
+          fontSize: 12.sp,
+          color: aLightTextColor,
+        ),
         button: TextStyle(
           fontSize: 17.sp,
           fontWeight: FontWeight.bold,

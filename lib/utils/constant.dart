@@ -24,3 +24,6 @@ final aPageSpecing1 = SizedBox(
 final aPageSpecing2 = SizedBox(
   height: 40.h,
 );
+
+final aContentPadding = REdgeInsets.all(10);
+const aTextStyle = TextStyle(fontWeight: FontWeight.bold);
