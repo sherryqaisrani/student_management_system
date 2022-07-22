@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:student_management_system/screens/applied_course.dart';
 import 'package:student_management_system/screens/change_password.dart';
 import 'package:student_management_system/screens/forgot_password.dart';
 import 'package:student_management_system/screens/loginpage2.dart';
@@ -37,7 +38,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: QualificationPage(),
+      child: AppliedCourse(),
     );
   }
 }

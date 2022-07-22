@@ -18,6 +18,10 @@ EdgeInsets aElevetedButtonPadding = EdgeInsets.symmetric(
   vertical: 18.h,
 );
 
+final aPageSpecing0 = SizedBox(
+  height: 10.h,
+);
+
 final aPageSpecing1 = SizedBox(
   height: 20.h,
 );

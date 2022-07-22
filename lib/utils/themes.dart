@@ -9,6 +9,8 @@ final lightTheme = ThemeData.light().copyWith(
   scaffoldBackgroundColor: aLightBackgroundColor,
   backgroundColor: aLightPlaceholderColor,
   errorColor: aLightErrorColor,
+  cardColor: aLightBackgroundColor,
+  canvasColor: aLightCardBackgroundColor,
   textTheme: GoogleFonts.redHatDisplayTextTheme(
     const TextTheme().copyWith(
         headline3: TextStyle(
@@ -83,6 +85,8 @@ final dartkTheme = ThemeData.dark().copyWith(
   scaffoldBackgroundColor: aDarkBackgroundColor,
   backgroundColor: aDarkPlaceholderColor,
   errorColor: aDarkErrorColor,
+  cardColor: aDarkBackgroundColor,
+  canvasColor: aDarCardBackgroundColor,
   textTheme: GoogleFonts.redHatDisplayTextTheme(
     const TextTheme().copyWith(
         headline3: TextStyle(
