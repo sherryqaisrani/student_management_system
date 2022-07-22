@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: OtpPage(),
+      child: QualificationPage(),
     );
   }
 }
