@@ -10,10 +10,10 @@ class RemoteException implements Exception {
 
 class LocalException implements Exception {
   String error;
-  LocalException({required this.error});
+  LocalException(this.error);
 }
 
 class RouteException implements Exception {
   final String message;
-  RouteException({required this.message});
+  RouteException(this.message);
 }

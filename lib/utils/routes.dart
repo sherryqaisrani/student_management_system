@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:student_management_system/error/remote_exception.dart';
 import 'package:student_management_system/screens/loginpage2.dart';
 import 'package:student_management_system/screens/singuppage.dart';
+
+import '../error/remote_exception.dart';
 
 class RouteGenerator {
   static const String splash = '/';
