@@ -6,6 +6,7 @@ import 'package:student_management_system/screens/academic_page.dart';
 import 'package:student_management_system/screens/applied_course.dart';
 import 'package:student_management_system/screens/change_password.dart';
 import 'package:student_management_system/screens/forgot_password.dart';
+import 'package:student_management_system/screens/home_page.dart';
 import 'package:student_management_system/screens/loginpage2.dart';
 import 'package:student_management_system/screens/otp.dart';
 import 'package:student_management_system/screens/personal.dart';
@@ -39,7 +40,7 @@ class MyApp extends StatelessWidget {
           home: child,
         );
       },
-      child: AcademicPage(),
+      child: HomePage(),
     );
   }
 }

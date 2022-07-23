@@ -24,3 +24,5 @@ const Color aDarCardBackgroundColor = Color(0xFFD9D9D9);
 
 const Color oragneColor = Color(0xffFCC50A);
 const Color aGrayColor = Color(0xFF8D989D);
+const Color aBlackColor = Colors.black;
+const Color aWhiteColor = Colors.white;
