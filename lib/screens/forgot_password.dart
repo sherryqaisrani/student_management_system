@@ -1,20 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:student_management_system/utils/colors.dart';
 import 'package:student_management_system/utils/constant.dart';
 import 'package:student_management_system/utils/file_path.dart';
 
-class ForgotPassword extends StatefulWidget {
-  ForgotPassword({Key? key}) : super(key: key);
+class ForgotPassword extends StatelessWidget {
+  const ForgotPassword({Key? key}) : super(key: key);
 
-  @override
-  State<ForgotPassword> createState() => _ForgotPasswordState();
-}
-
-class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
+    final _textEditingController = TextEditingController();
     return Scaffold(
       body: Stack(
         children: [
@@ -46,6 +41,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                       ),
                       aPageSpecing1,
                       TextFormField(
+                        controller: _textEditingController,
                         textInputAction: TextInputAction.next,
                         keyboardType: TextInputType.text,
                         obscureText: true,

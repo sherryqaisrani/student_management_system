@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
-import 'package:student_management_system/utils/colors.dart';
 import 'package:student_management_system/utils/file_path.dart';
 
 class PersonalInfo extends StatefulWidget {

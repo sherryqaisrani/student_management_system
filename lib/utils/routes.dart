@@ -32,7 +32,7 @@ class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings setting) {
     switch (setting.name) {
       case login:
-        return MaterialPageRoute(builder: (_) => LoginPage2());
+        return MaterialPageRoute(builder: (_) => LoginPage());
       case signup:
         return MaterialPageRoute(builder: (_) => SignUpPage());
       case homePage:
