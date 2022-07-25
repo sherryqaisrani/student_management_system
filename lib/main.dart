@@ -2,6 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
+import 'package:student_management_system/provider/obsecure_password.dart';
 import 'package:student_management_system/screens/academic_page.dart';
 import 'package:student_management_system/screens/applied_course.dart';
 import 'package:student_management_system/screens/change_password.dart';
@@ -14,6 +16,7 @@ import 'package:student_management_system/screens/edit_qualification.dart';
 import 'package:student_management_system/screens/qualification.dart';
 import 'package:student_management_system/screens/singuppage.dart';
 import 'package:student_management_system/utils/colors.dart';
+import 'package:student_management_system/utils/routes.dart';
 import 'package:student_management_system/utils/themes.dart';
 
 void main() {
@@ -31,16 +34,23 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: "Student Management System",
-          themeMode: ThemeMode.system,
-          darkTheme: dartkTheme,
-          theme: lightTheme,
-          home: child,
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider(
+              create: (context) => ObsecurePassword(),
+            ),
+          ],
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: "Student Management System",
+            themeMode: ThemeMode.system,
+            darkTheme: dartkTheme,
+            theme: lightTheme,
+            initialRoute: RouteGenerator.login,
+            onGenerateRoute: RouteGenerator.generateRoute,
+          ),
         );
       },
-      child: HomePage(),
     );
   }
 }
