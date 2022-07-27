@@ -24,7 +24,7 @@ class SignupProvider extends ChangeNotifier {
     try {
       print('eeeeeeeee');
       isLoading = true;
-      final res = networkClient.post(
+      final res = await networkClient.post(
         '/signup',
         {
           'id': idController.text.trim(),
@@ -38,8 +38,9 @@ class SignupProvider extends ChangeNotifier {
 
       // Map<String, dynamic> mp = jsonDecode(res.toString());
       Map<String, dynamic> mp = jsonDecode(res.toString());
-
+      print(mp);
       if (mp['success']) {
+        print('hello hi zain here is maryam');
         idController.clear();
         fullNameController.clear();
         shortNameController.clear();
@@ -58,5 +59,7 @@ class SignupProvider extends ChangeNotifier {
     } on RemoteException catch (e) {
       response = e.toString();
     }
+
+    notifyListeners();
   }
 }
