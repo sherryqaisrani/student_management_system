@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:student_management_system/provider/country_provider.dart';
 import 'package:student_management_system/provider/obsecure_password.dart';
 import 'package:student_management_system/provider/signup_provider.dart';
 import 'package:student_management_system/screens/academic_page.dart';
@@ -42,7 +43,8 @@ class MyApp extends StatelessWidget {
             ),
             ChangeNotifierProvider(
               create: (_) => SignupProvider(),
-            )
+            ),
+            ChangeNotifierProvider(create: (_) => CountryProvider()),
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,

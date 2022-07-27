@@ -6,7 +6,7 @@ class ApiService {
 
   ApiService({required this.networkClient});
 
-  Future<Response> getCountries() {
+  Future<Response> getCountries() async {
     return networkClient.get('/countries');
   }
 
