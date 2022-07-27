@@ -1,34 +1,28 @@
-import 'dart:convert';
-import 'dart:js_util';
-
 import 'package:dio/dio.dart';
 import 'package:student_management_system/error/remote_exception.dart';
 
 class NetworkClient {
   Dio _dio = Dio();
 
-  NetworkClient(String baseUrl) {
-    NetworkClient(baseUrl) {
-      BaseOptions baseOptions = BaseOptions(
-        baseUrl: baseUrl,
-        receiveTimeout: 20000,
-        connectTimeout: 30000,
-        maxRedirects: 2,
-      );
+  NetworkClient({String? baseUrl}) {
+    baseUrl ??= 'https://hrm.talhasultan.dev/api';
+    BaseOptions baseOptions = BaseOptions(
+      receiveTimeout: 200000,
+      connectTimeout: 300000,
+      baseUrl: baseUrl,
+      maxRedirects: 2,
+    );
+    _dio = Dio(baseOptions);
+    _dio.interceptors.add(LogInterceptor(
+        requestBody: false,
+        request: false,
+        error: true,
+        requestHeader: false,
+        responseBody: true,
+        responseHeader: false));
 
-      _dio = Dio(baseUrl);
-      _dio.interceptors.add(LogInterceptor(
-          requestBody: true,
-          request: true,
-          error: true,
-          requestHeader: true,
-          responseBody: false,
-          responseHeader: false));
-    }
+    //For Http Get Request
   }
-
-  //For Http Get Request
-
   Future<Response> get(String url,
       {Map<String, dynamic>? params, String? token}) async {
     Response response;
@@ -46,8 +40,28 @@ class NetworkClient {
   }
 
   //For Http Post Reques
-  Future<Response> post(String url,
-      {Map<String, dynamic>? params, String? token}) async {
+  // Future<Response> post(String url, Map<String, dynamic>? params,
+  //     {String? token}) async {
+  //   Response response;
+  //   try {
+  //     Map<String, dynamic> map = {"Accept": "application/json"};
+  //     if (token != null) {
+  //       map.addAll({"Authorization": "Bearer $token"});
+  //     }
+  //     response = await _dio.post(url,
+  //         queryParameters: params,
+  //         options: Options(
+  //             headers: map,
+  //             responseType: ResponseType.json,
+  //             validateStatus: (_) => true));
+  //   } on DioError catch (exception) {
+  //     throw RemoteException(dioError: exception);
+  //   }
+  //   return response;
+  // }
+
+  Future<Response> post(String url, Map<String, dynamic> params,
+      {String? token}) async {
     Response response;
     try {
       Map<String, dynamic> map = {"Accept": "application/json"};
@@ -55,11 +69,12 @@ class NetworkClient {
         map.addAll({"Authorization": "Bearer $token"});
       }
       response = await _dio.post(url,
-          queryParameters: params,
+          data: params,
           options: Options(
-              headers: map,
-              responseType: ResponseType.json,
-              validateStatus: (_) => true));
+            headers: map,
+            responseType: ResponseType.json,
+            validateStatus: (_) => true,
+          ));
     } on DioError catch (exception) {
       throw RemoteException(dioError: exception);
     }

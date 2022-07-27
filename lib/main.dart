@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:student_management_system/provider/obsecure_password.dart';
+import 'package:student_management_system/provider/signup_provider.dart';
 import 'package:student_management_system/screens/academic_page.dart';
 import 'package:student_management_system/screens/applied_course.dart';
 import 'package:student_management_system/screens/change_password.dart';
@@ -39,6 +40,9 @@ class MyApp extends StatelessWidget {
             ChangeNotifierProvider(
               create: (context) => ObsecurePassword(),
             ),
+            ChangeNotifierProvider(
+              create: (_) => SignupProvider(),
+            )
           ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,

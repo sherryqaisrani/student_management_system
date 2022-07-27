@@ -4,25 +4,36 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:student_management_system/provider/obsecure_password.dart';
+import 'package:student_management_system/provider/signup_provider.dart';
 import 'package:student_management_system/utils/colors.dart';
 import 'package:student_management_system/utils/file_path.dart';
 import 'package:student_management_system/utils/routes.dart';
 import 'package:student_management_system/widget/CustomeFormTextField.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+  SignUpPage({Key? key}) : super(key: key);
+  final _idCardController = TextEditingController();
+  final _fullNameController = TextEditingController();
+  final _shortNameController = TextEditingController();
+  final _phoneNumberController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmPasswordController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  Future<void> _submitForm(BuildContext context) async {
+    Provider.of<SignupProvider>(context, listen: false).submitedForm(
+      context,
+      _idCardController,
+      _fullNameController,
+      _shortNameController,
+      _phoneNumberController,
+      _passwordController,
+      _confirmPasswordController,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController _idCardController = TextEditingController();
-    final TextEditingController _fullNameController = TextEditingController();
-    final TextEditingController _shortNameController = TextEditingController();
-    final TextEditingController _phoneNumberController =
-        TextEditingController();
-    final TextEditingController _passwordController = TextEditingController();
-    final TextEditingController _confirmPasswordController =
-        TextEditingController();
-    final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -166,7 +177,7 @@ class SignUpPage extends StatelessWidget {
                     child: SizedBox(
                       width: double.infinity,
                       child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () => _submitForm(context),
                         child: Text(
                           'SIGNUP',
                           style: Theme.of(context).textTheme.button,
