@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
+import 'package:student_management_system/models/country.dart';
+import 'package:student_management_system/provider/country_provider.dart';
 import 'package:student_management_system/utils/file_path.dart';
 
 class PersonalInfo extends StatefulWidget {
@@ -274,6 +277,12 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     ),
                     SizedBox(
                       height: 20.h,
+                    ),
+                    Consumer<CountryProvider>(
+                      builder: (context, value, child) =>
+                          DropdownButtonFormField<CountryModel>(
+                              items: value.countryList,
+                              onChanged: (CountryModel? value) {}),
                     ),
                     SizedBox(
                       width: double.infinity,

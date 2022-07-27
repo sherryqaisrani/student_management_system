@@ -52,7 +52,7 @@ class MyApp extends StatelessWidget {
             themeMode: ThemeMode.system,
             darkTheme: dartkTheme,
             theme: lightTheme,
-            initialRoute: RouteGenerator.login,
+            initialRoute: RouteGenerator.personalScreen,
             onGenerateRoute: RouteGenerator.generateRoute,
           ),
         );

@@ -10,7 +10,7 @@ import 'package:student_management_system/network/network_client.dart';
 class CountryProvider extends ChangeNotifier {
   ApiService apiService = ApiService(networkClient: NetworkClient());
 
-  List<DropdownMenuItem> countryList = [];
+  List<DropdownMenuItem<CountryModel>> countryList = [];
 
   Future<void> getCountry() async {
     try {
