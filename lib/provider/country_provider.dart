@@ -18,15 +18,14 @@ class CountryProvider extends ChangeNotifier {
 
       Map<String, dynamic> map = jsonDecode(res.toString());
 
-      if (map['success']) {
-        countryList = (map['data'] as List).map((e) {
-          CountryModel countryModel = CountryModel.fromJson(map);
-          return DropdownMenuItem<CountryModel>(
-            value: countryModel,
-            child: Text(countryModel.name),
-          );
-        }).toList();
-      }
+      countryList = (map['data'] as List).map((e) {
+        CountryModel countryModel = CountryModel.fromJson(e);
+        return DropdownMenuItem<CountryModel>(
+          value: countryModel,
+          child: Text(countryModel.name),
+        );
+      }).toList();
+      notifyListeners();
     } on RemoteException catch (e) {
       throw e.dioError;
     }

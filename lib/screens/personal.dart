@@ -28,6 +28,7 @@ class _PersonalInfoState extends State<PersonalInfo> {
 
   @override
   Widget build(BuildContext context) {
+    Provider.of<CountryProvider>(context, listen: false).getCountry();
     return Scaffold(
       body: Stack(
         children: [
@@ -281,8 +282,12 @@ class _PersonalInfoState extends State<PersonalInfo> {
                     Consumer<CountryProvider>(
                       builder: (context, value, child) =>
                           DropdownButtonFormField<CountryModel>(
-                              items: value.countryList,
-                              onChanged: (CountryModel? value) {}),
+                        items: value.countryList,
+                        onChanged: (CountryModel? value) {},
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20.h,
                     ),
                     SizedBox(
                       width: double.infinity,
